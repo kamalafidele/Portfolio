@@ -29,6 +29,8 @@
         .servicesImageHeight{
             height: 220px;
         }
+
+ 
         /* h-1/2 */
     </style>
 </head>
@@ -60,7 +62,7 @@
                     <strong class="block">Skills:</strong> JAVA, C++,C, NODE JS,ReactJS, Angular,Git, XD,PHP & React Native
                     </p>
                 </div>
-                <img src="https://res.cloudinary.com/find-yours/image/upload/v1635232210/users/images/uwbzslqd24fory4wrlqb.jpg" alt="my-profile-picture" class="w-80 rounded-full flex-shrink border-6 border-white shadow-md">
+                <img src="https://res.cloudinary.com/find-yours/image/upload/v1635858371/users/images/tjpmbxkouxxfquetdpjq.jpg" alt="my-profile-picture" class="w-80 rounded-full flex-shrink border-6 border-white shadow-md">
             </div>
         </div>
     </div>
@@ -184,7 +186,7 @@
                         <input type="text" id="subject" placeholder="Subject" required class="border border-gray-200 outline-none px-4 py-2 rounded-md hover:border-gray-400 focus:border-gray-600 md:col-span-2" maxlength="70">
                         <textarea name="message"  id="message" cols="30" rows="7" required placeholder="Message"  class="border border-gray-200 outline-none px-4 py-2 rounded-md hover:border-gray-400 focus:border-gray-600 md:col-span-2" maxlength="200"></textarea>
                     </div>
-                    <button class="inline-block w-auto mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-md shadow-md text-white font-bold text-sm">Send Message</button>
+                    <button class="inline-block w-auto mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-md shadow-md text-white font-bold text-sm " >Send Message </button>
                 </form>
                 <p class="text-2xl  pt-2" id="result"></p>
             </div>
@@ -192,6 +194,7 @@
     </section>
     <script>
     let myForm=document.getElementById("myForm");
+
 
   async  function saveData(e){
     let name=document.getElementById("name");
@@ -204,16 +207,15 @@
 
     let url="https://myportame.herokuapp.com/api/kamala-fidele/message";
    
-
     let xhr = new XMLHttpRequest();
-			
-		
+				
 		xhr.open("POST", url, true);
 		// Set the request header i.e. which type of content you are sending
 		xhr.setRequestHeader("Content-Type", "application/json");
 		// Create a state change callback
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState === 4 && xhr.status === 200) {
+                
 				// Print received data from server
                 name.value="";
                 email.value="";
@@ -229,7 +231,6 @@
 
         xhr.send(JSON.stringify(data));
     }
-
 
     
   </script>
