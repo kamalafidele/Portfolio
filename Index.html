@@ -59,7 +59,7 @@
                     <p class="text-xl leading-relaxed">
                          I am a software engineer.
                          I am currently studying Software engineering at Rwanda Coding Academy.
-                    <strong class="block">Skills:</strong> Java, Python, C++, C, Javascript, Docker, Kubernetes, Node JS, Django, ReactJS, Angular, React Native, MySQL, MongoDb
+                    <strong class="block">Skills:</strong> Java, Python, C++, C, Javascript, Docker, Kubernetes, Node JS, Django, ReactJS, Angular, React Native, MySQL, MongoDb, Selenium
                     </p>
                 </div>
                 <!-- <img src="https://res.cloudinary.com/find-yours/image/upload/v1636024984/users/images/ltdqpyr09rck0whzkcfw.jpg" alt="previous-profile"> -->
@@ -209,15 +209,15 @@
 
 
   async  function saveData(e){
-    let name=document.getElementById("name");
-    let email=document.getElementById("email");
-    let subject=document.getElementById("subject");
-    let message=document.getElementById("message");
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let subject = document.getElementById("subject");
+    let message = document.getElementById("message");
     
-    const data={name:name.value,email:email.value,subject:subject.value,message:message.value};
-    let result=document.getElementById("result");
+    const data = { name:name.value, email:email.value, subject:subject.value, message:message.value };
+    let result = document.getElementById("result");
 
-    let url="https://myportame.herokuapp.com/api/kamala-fidele/message";
+    let url = "https://myportame.herokuapp.com/api/kamala-fidele/message";
    
     let xhr = new XMLHttpRequest();
 				
@@ -229,12 +229,12 @@
 			if (xhr.readyState === 4 && xhr.status === 200) {
                 
 				// Print received data from server
-                name.value="";
-                email.value="";
-                subject.value="";
-                message.value="";
+                name.value = "";
+                email.value = "";
+                subject.value = "";
+                message.value = "";
 
-                let re1=JSON.parse(this.responseText);
+                let re1 = JSON.parse(this.responseText);
                 console.log(re1.message);
 
 				result.innerHTML = re1.message;
